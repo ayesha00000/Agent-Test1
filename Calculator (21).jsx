@@ -4,7 +4,7 @@ import axios from 'axios';
 const API_URL = 'https://zakat-app-production-fdaa.up.railway.app';
 //const API_URL = 'http://127.0.0.1:8000';
 
-const STEPS = [
+const STEPS = 
   { id: 1, title: 'Gold & Silver',     icon: '🪙' },
   { id: 2, title: 'Cash & Bank',       icon: '💵' },
   { id: 3, title: 'Investments',       icon: '📈' },
