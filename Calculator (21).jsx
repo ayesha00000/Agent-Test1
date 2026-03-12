@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_URL = 'https://zakat-app-production-fdaa.up.railway.app';
-//const API_URL = 'http://127.0.0.1:8000';
+//const API_URL = 'https://zakat-app-production-fdaa.up.railway.app';
+const API_URL = 'http://127.0.0.1:8000';
 
 const STEPS = [
   { id: 1, title: 'Gold & Silver',     icon: '🪙' },
