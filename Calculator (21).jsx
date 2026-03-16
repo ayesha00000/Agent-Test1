@@ -13,7 +13,7 @@ const STEPS =
   { id: 6, title: 'Agriculture',       icon: '🌾' },
   { id: 7, title: 'Animals',           icon: '🐄' },
   { id: 8, title: 'Liabilities',       icon: '💳' },
-  { id: 9, title: 'Result',            icon: '📊' },
+ // { id: 9, title: 'Result',            icon: '📊' },
 ];
 
 const CURRENCIES = [
