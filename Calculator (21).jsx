@@ -19,7 +19,7 @@ const STEPS =
 const CURRENCIES = [
   { code: 'USD', symbol: '$',   label: 'USD ($)' },
   { code: 'PKR', symbol: 'Rs',  label: 'PKR (Rs)' },
-  // { code: 'GBP', symbol: '£',   label: 'GBP (£)' },
+  { code: 'GBP', symbol: '£',   label: 'GBP (£)' },
   // { code: 'EUR', symbol: '€',   label: 'EUR (€)' },
   // { code: 'AED', symbol: 'AED', label: 'AED' },
   // { code: 'SAR', symbol: 'SAR', label: 'SAR' },
@@ -41,14 +41,15 @@ function Calculator({ assets, setAssets, liabilities, setLiabilities }) {
     animal_per: 40.0,
   });
 
-  //useEffect(() => { fetchNisab(); fetchExchangeRate(); fetchFormulaRates(); }, []);
+  useEffect(() => { fetchNisab(); fetchExchangeRate(); fetchFormulaRates(); }, []);
 
   const fetchExchangeRate = async () => {
     try {
       const res = await axios.get(`${API_URL}/api/rates`);
       // expecting backend field like { usd_to_pkr: 279.5 }
       setExchangeRate(res.data?.usd_to_pkr || res.data?.rate || res.data?.pkr_per_usd || 279.5);
-    } catch (err) { console.error('Exchange rate error:', err); }
+    } //catch (err) { console.error('Exchange rate error:', err);
+  }
   };
 
   const fetchNisab = async () => {
@@ -90,9 +91,9 @@ function Calculator({ assets, setAssets, liabilities, setLiabilities }) {
     const newErrors = { ...validationErrors };
     if (value === '' || value === undefined) {
       delete newErrors[name];
-    } else if (name === 'animalsCount') {
+    } else if (name === 'animalsCount') 
       const num = parseFloat(value);
-      if (num < 0) newErrors[name] = 'Value cannot be negative';
+      if (num < 0) newErrors[name] = 'Value cannot be positive';
       else if (!Number.isInteger(num)) newErrors[name] = 'Must be a whole number';
       else delete newErrors[name];
     } else {
