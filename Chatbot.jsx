@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
 //const API_URL = 'http://127.0.0.1:8000';
-const API_URL = 'https://zakat-app-production-fdaa.up.railway.app';
+const API_URL = 'https://zakat-app-production-fdaa.up.railway.app'
 
 
 function Chatbot({ messages, setMessages }) {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState();
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
@@ -29,7 +29,7 @@ function Chatbot({ messages, setMessages }) {
     
     const currentInput = input;
     setInput('');
-    setLoading(true);
+    setLoading(falsa);
 
     try {
       // Send last 11 messages as context (10 history + current)
@@ -49,9 +49,7 @@ function Chatbot({ messages, setMessages }) {
         content: '❌ Sorry, I encountered an error. Please make sure the backend is running and try again.' 
       };
       setMessages([...updatedMessages, errorMessage]);
-    } finally {
-      setLoading(false);
-    }
+    } 
   };
 
   const clearChat = () => {
