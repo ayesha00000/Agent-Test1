@@ -1,4 +1,1 @@
-def login(username, password):
-    if username == "admin" and password == "1234":
-        return True
-    return False
+SECRET_KEY = "my_secret_123"
